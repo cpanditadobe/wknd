@@ -1,0 +1,56 @@
+
+
+a.button:any-link, button {
+    color: white !important;
+    background-color: #004097 !important;
+}
+
+.columns2 > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns2 img {
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .columns2 > div {
+        display: flex;
+        align-items: center;
+        flex-direction: unset;
+    }
+
+    .columns2 > div > div {
+        flex: 1;
+        margin-left: 32px;
+    }
+
+    .columns2 > div > div:first-of-type {
+        margin-left: unset;
+        max-width:300px;
+    }
+
+    .columns2 > div > div > p {
+        font-family: arial, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        font-size: 14px;
+        padding-right: 5px;
+    }
+    .columns2 > div > div > p::after {
+        font-family: arial, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        font-size: 14px;
+        content: "▶";
+        color: #004097;
+        padding-right: 5px;
+    }
+}
