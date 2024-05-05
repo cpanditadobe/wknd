@@ -4,7 +4,7 @@
       "id": "library",
       "title": "Library",
       "environments": [ "edit" ],
-      "url": "https://main--wknd--hlxsites.hlx.live/tools/sidekick/library.html",
+      "url": "https://main--wknd--cpanditadobe.hlx.live/tools/sidekick/library.html",
       "includePaths": [ "**.docx**" ]
     },
     {
