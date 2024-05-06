@@ -30,12 +30,25 @@ header nav[aria-expanded='true'] {
   min-height: 100vh;
 }
 
-/* brand */
+/* brand 
 header .nav-brand {
   grid-area: brand;
   font-size: 22px;
   font-weight: 700;
   line-height: 1em;
+}*/
+header nav .nav-brand a {
+  margin-top: 15px;
+  display: block;
+  font-size:0 ;
+  background-image: url(/icons/logo.jpeg);
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 100px;
+ /* grid-area: brand;
+  flex-basis: 128px;
+  font: var(--type-headline-1-font);
+  letter-spacing: var(--type-headline-1-letter-spacing);*/
 }
 
 header nav .nav-brand p {
