@@ -38,17 +38,17 @@ header .nav-brand {
   line-height: 1em;
 }*/
 header nav .nav-brand a {
-  margin-top: 15px;
+  /*margin-top: 0px;
   display: block;
   font-size:0 ;
   background-image: url(/icons/logo.png);
   background-repeat: no-repeat;
-  width: 250px;
-  height: 80px;
- /* grid-area: brand;
+  width: 300px;
+  height: 100px;*/
+  grid-area: brand;
   flex-basis: 128px;
   font: var(--type-headline-1-font);
-  letter-spacing: var(--type-headline-1-letter-spacing);*/
+  letter-spacing: var(--type-headline-1-letter-spacing);
 }
 
 header nav .nav-brand p {
