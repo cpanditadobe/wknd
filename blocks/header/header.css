@@ -43,8 +43,8 @@ header nav .nav-brand a {
   font-size:0 ;
   background-image: url(/icons/logo.png);
   background-repeat: no-repeat;
-  width: 300px;
-  height: 100px;
+  width: 250px;
+  height: 80px;
  /* grid-area: brand;
   flex-basis: 128px;
   font: var(--type-headline-1-font);
