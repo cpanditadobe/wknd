@@ -24,6 +24,8 @@ import {
 } from './analytics/lib-analytics.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
+let externalAssetHost = "delivery-p131604-e1282152";
+
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
 // Define the custom audiences mapping for experience decisioning
@@ -233,7 +235,7 @@ function isExternalImage(element, externalImageMarker) {
 
   // if the element is an anchor with the href as text content and the href has
   // an image extension, it's an external image
-  if ((element.textContent.trim() === element.getAttribute('href')) /*|| element.getAttribute('href').includes(externalAssetHost)*/) {
+  if ((element.textContent.trim() === element.getAttribute('href')) || element.getAttribute('href').includes(externalAssetHost)) {
     const ext = getUrlExtension(element.getAttribute('href'));
     return (ext && ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext.toLowerCase()) || element.getAttribute('href').includes('/is/image/'));
   }
