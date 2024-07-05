@@ -9,7 +9,7 @@
     },
     {
       "id": "asset-library",
-      "title": "My Assets",
+      "title": "My Assets with DM Open API",
       "environments": [ "edit" ],
       "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franklin/asset-selector.html",
       "isPalette": true,
