@@ -11,7 +11,7 @@
       "id": "asset-library",
       "title": "My Assets",
       "environments": [ "edit" ],
-      "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/embed.html?route=AssetSelector",
+      "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franklin/asset-selector.html",
       "isPalette": true,
       "passConfig": true,
       "includePaths": [ "**.docx**" ],
