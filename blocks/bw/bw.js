@@ -2,7 +2,7 @@
 // script.src = 'https://aem-dev-skyplus6e.goindigo.in/content/experience-fragments/skyplus6e/in/en/edge/bw.js?test';
 // document.head.appendChild(script);
 //bw.js
-import { loadCSS, loadScript } from "../../scripts/aem.js";
+import { loadCSS, loadScript } from "../../scripts/lib-franklin.js";
 
 const createDivWithArgs = (args) => {
     const widget = document.createElement("div");
