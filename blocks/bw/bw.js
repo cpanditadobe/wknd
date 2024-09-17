@@ -12,7 +12,7 @@ const createDivWithArgs = (args) => {
     document.getElementsByTagName("body")[0].appendChild(widget);
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
     const widget = document.createElement("div");
     widget.setAttribute("data-page-type", "homepage")
     widget.setAttribute("data-component", "mf-booking-widget")
@@ -47,11 +47,11 @@ export default function decorate(block) {
     block.innerHTML = "";
     block.appendChild(widget);
    // setTimeout(async () => {
-        //console.log("--Timeout finished::--bw.js::::::::::::::::::::::::", document.querySelectorAll("[data-component='mf-booking-widget']"))
+        console.log("--Timeout finished::--bw.js::::::::::::::::::::::::", document.querySelectorAll("[data-component='mf-booking-widget']"))
         let remoteUrl = config.mfBase + "/remoteEntry.js"
         const envConfig = config.mfBase + "/config/env-config.js";
 
-         loadScript(envConfig);
-         loadScript(remoteUrl);
+        await loadScript(envConfig);
+        await loadScript(remoteUrl);
   // })
 }
