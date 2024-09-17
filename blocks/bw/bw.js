@@ -12,7 +12,7 @@ const createDivWithArgs = (args) => {
     document.getElementsByTagName("body")[0].appendChild(widget);
 }
 
-export default async function decorate(block) {
+export default function decorate(block) {
     const widget = document.createElement("div");
     widget.setAttribute("data-page-type", "homepage")
     widget.setAttribute("data-component", "mf-booking-widget")
@@ -46,12 +46,12 @@ export default async function decorate(block) {
     console.log("-----bw---matchd:::::", config)
     block.innerHTML = "";
     block.appendChild(widget);
-    //setTimeout(async () => {
+    setTimeout(async () => {
         //console.log("--Timeout finished::--bw.js::::::::::::::::::::::::", document.querySelectorAll("[data-component='mf-booking-widget']"))
         let remoteUrl = config.mfBase + "/remoteEntry.js"
         const envConfig = config.mfBase + "/config/env-config.js";
 
         await loadScript(envConfig);
         await loadScript(remoteUrl);
-   // })
+   })
 }
