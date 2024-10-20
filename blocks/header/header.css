@@ -38,12 +38,12 @@ header .nav-brand {
   line-height: 1em;
 }*/
 header nav .nav-brand a {
-  margin-top: 0px;
+  margin-top: -20px;
   display: block;
   font-size:0 ;
   background-image: url(/icons/bial-logo.png);
   background-repeat: no-repeat;
-  width: 250px;
+  width: 200px;
   height: 75px;
   grid-area: brand;
   flex-basis: 128px;
