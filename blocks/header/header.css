@@ -43,8 +43,8 @@ header nav .nav-brand a {
   font-size:0 ;
   background-image: url(/icons/bial-logo.png);
   background-repeat: no-repeat;
-  width: 300px;
-  height: 110px;
+  width: 250px;
+  height: 75px;
   grid-area: brand;
   flex-basis: 128px;
   font: var(--type-headline-1-font);
