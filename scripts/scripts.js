@@ -328,6 +328,11 @@ export function createOptimizedPicture(src, alt = '', eager = false, breakpoints
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  const smartCrop = document.createElement('script');
+  smartCrop.type = 'text/javascript'; 
+  smartCrop.src = 'https://s7ap1.scene7.com/s7viewers/html5/js/SmartCropVideoViewer.js';
+  if(document.getElementsByTagName('head')[0] != null)
+    document.getElementsByTagName('head')[0].appendChild(smartCrop);
 
   await window.hlx.plugins.run('loadEager');
 
@@ -340,13 +345,6 @@ async function loadEager(doc) {
     decorateMain(main);
     await waitForLCP(LCP_BLOCKS);
   }
-
-  const smartCrop = document.createElement('script');
-  smartCrop.type = 'text/javascript'; 
-  smartCrop.src = 'https://s7ap1.scene7.com/s7viewers/html5/js/SmartCropVideoViewer.js';
-  if(document.getElementsByTagName('head')[0] != null)
-    document.getElementsByTagName('head')[0].appendChild(smartCrop);
-
 }
 
 /**
