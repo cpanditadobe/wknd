@@ -338,7 +338,7 @@ async function loadEager(doc) {
     await waitForLCP(LCP_BLOCKS);
   }
 }
-
+  
 /**
  * Adds the favicon.
  * @param {string} href The favicon URL
@@ -487,4 +487,5 @@ sampleRUM.always.on('convert', (data) => {
   conversionEvent = undefined;
 });
 
+//Change
 loadPage();

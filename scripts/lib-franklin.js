@@ -552,7 +552,7 @@ export function normalizeHeadings(el, allowedHeadings) {
     }
   });
 }
-
+  //change
 /**
  * Set template (page structure) and theme (page styles).
  */
