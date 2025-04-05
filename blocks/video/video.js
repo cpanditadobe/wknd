@@ -78,7 +78,7 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
     return video;
   }
   
-  const loadVideoEmbed = (block, link, replacePlaceholder, autoplay) => {
+ /*const loadVideoEmbed = (block, link, replacePlaceholder, autoplay) => {
     if (block.dataset.embedIsLoaded) {
       return;
     }
@@ -99,9 +99,9 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
     block.replaceChildren(embedEl);
   
     block.dataset.embedIsLoaded = true;
-  };
+  };*/
   
-  export default async function decorate(block) {
+  /*export default async function decorate(block) {
     const placeholder = block.querySelector('picture');
     const link = block.querySelector('a').href;
     block.textContent = '';
@@ -126,4 +126,93 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
       });
       observer.observe(block);
     }
+  }*/
+
+  export default async function decorate(block) {
+      const placeholder = block.querySelector('picture');
+      const link = block.querySelector('a').href;
+      block.textContent = '';
+    
+      if (placeholder) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'video-placeholder';
+        wrapper.innerHTML = '<div class="video-placeholder-play"><button type="button" title="Play"></button></div>';
+        wrapper.prepend(placeholder);
+        wrapper.addEventListener('click', () => {
+          loadVideoEmbed(block, link, true, false);
+        });
+        block.append(wrapper);
+      } else {
+        //block.classList.add('lazy-loading');
+       // const observer = new IntersectionObserver((entries) => {
+         // if (entries.some((e) => e.isIntersecting)) {
+           // observer.disconnect();
+            loadVideoEmbed(block, link, false, block.classList.contains('autoplay'));
+            //block.classList.remove('lazy-loading');
+          //}
+       // });
+        //observer.observe(block);
+      }
+    }
+
+  function getDivElement(source, replacePlaceholder, autoplay) {
+    const s7div = document.createElement('div');
+    // s7div.setAttribute('id','s7video_div');
+    s7div.setAttribute('id','s7smartcropvideo_div');
+    // s7div.setAttribute('class','msil');
+    s7div.setAttribute('class','msil-smart');
+    return s7div;
   }
+
+  const loadVideoEmbed = (block, link, replacePlaceholder, autoplay) => {
+    if (block.dataset.embedIsLoaded) {
+      return;
+    }
+    const url = new URL(link);
+  
+    const isYoutube = link.includes('youtube') || link.includes('youtu.be');
+    const isVimeo = link.includes('vimeo');
+    const isMp4 = link.includes('.mp4');
+    const isScene7 = link.includes('scene7');
+
+    let embedEl;
+    if (isYoutube) {
+      embedEl = embedYoutube(url, replacePlaceholder, autoplay);
+    } else if (isVimeo) {
+      embedEl = embedVimeo(url, replacePlaceholder, autoplay);
+    } else if (isMp4) {
+      embedEl = getVideoElement(link, replacePlaceholder, autoplay);
+    } else if (isScene7) {
+      embedEl = getDivElement(link, replacePlaceholder, autoplay);
+    }
+    block.replaceChildren(embedEl);
+    block.dataset.embedIsLoaded = true;
+
+    if(isScene7){
+
+      /*var s7videoviewer = new s7viewers.VideoViewer({
+        "containerId" : "s7video_div",
+        "params" : { 
+          "serverurl" : "https://s7ap1.scene7.com/is/image/",
+          "contenturl" : "https://s7ap1.scene7.com/is/content/", 
+          "config" : "nagarrosoftwarepvtltd/MSIL",
+          "posterimage": "nagarrosoftwarepvtltd/marutibrezza-AVS",
+          "videoserverurl": "https://s7ap1.scene7.com/is/content",
+          "asset" : "nagarrosoftwarepvtltd/marutibrezza-AVS" }
+      })
+      s7videoviewer.init(); */
+
+      var s7smartcropvideoviewer = new s7viewers.SmartCropVideoViewer({
+        "containerId" : "s7smartcropvideo_div",
+        "params" : { 
+          "serverurl" : "https://s7ap1.scene7.com/is/image/",
+          "contenturl" : "https://s7ap1.scene7.com/is/content/", 
+          "config" : "nagarrosoftwarepvtltd/MSIL-Smart",
+          "videoserverurl": "https://s7ap1.scene7.com/is/content",
+          "asset" : "nagarrosoftwarepvtltd/marutibrezza-AVS" }
+      })
+    s7smartcropvideoviewer.init(); 
+
+    }
+
+  };
