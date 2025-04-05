@@ -328,12 +328,9 @@ export function createOptimizedPicture(src, alt = '', eager = false, breakpoints
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
-  
   await window.hlx.plugins.run('loadEager');
-
   // load demo config
   await loadDemoConfig();
-
   const main = doc.querySelector('main');
   if (main) {
     await initAnalyticsTrackingQueue();
