@@ -61,9 +61,7 @@ main .form-container {
     background-color: var(--mt-background-color-primary);
     padding: var(--form-padding);
     width: var(--form-width);
-    margin-top: 50px ;
     margin-left: var(--nav-height) ;
-    margin-right:var(--nav-height) ;
     margin-bottom: var(--nav-height) ;
 }
 
