@@ -340,6 +340,13 @@ async function loadEager(doc) {
     decorateMain(main);
     await waitForLCP(LCP_BLOCKS);
   }
+
+  const smartCrop = document.createElement('script');
+  smartCrop.type = 'text/javascript'; 
+  smartCrop.src = 'https://s7ap1.scene7.com/s7viewers/html5/js/SmartCropVideoViewer.js';
+  if(document.getElementsByTagName('head')[0] != null)
+    document.getElementsByTagName('head')[0].appendChild(smartCrop);
+
 }
 
 /**
@@ -351,11 +358,7 @@ export function addFavIcon(href) {
   link.rel = 'icon';
   link.type = 'image/png';
   link.href = href;
-
-  const smartCrop = document.createElement('script');
-  smartCrop.type = 'text/javascript'; 
-  smartCrop.src = 'https://s7ap1.scene7.com/s7viewers/html5/js/SmartCropVideoViewer.js';
-
+  
   const existingLink = document.querySelector('head link[rel="icon"]');
   if (existingLink) {
     existingLink.parentElement.replaceChild(link, existingLink);
@@ -363,8 +366,7 @@ export function addFavIcon(href) {
     document.getElementsByTagName('head')[0].appendChild(link);
   }
 
-  document.getElementsByTagName('head')[0].appendChild(smartCrop);
-  
+
 }
 
 /**
