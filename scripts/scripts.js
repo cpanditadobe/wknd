@@ -329,7 +329,6 @@ async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   
-
   await window.hlx.plugins.run('loadEager');
 
   // load demo config
