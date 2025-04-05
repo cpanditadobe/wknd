@@ -12,10 +12,11 @@
     aspect-ratio: 16 / 9;
   }
   
+  /*
   .video > div {
     display: flex;
     justify-content: center;
-  }
+  }*/
   
   .video video {
     max-width: 100%;
