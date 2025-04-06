@@ -74,10 +74,10 @@
     left: 7px;
   }
 
-  /*#s7video_div.s7videoviewer{
+#s7video_div.s7videoviewer{
     width:100%; 
     height:auto;
- }*/
+ }
 
  #s7smartcropvideo_div.s7smartcropvideoviewer{
   width:100%; 
