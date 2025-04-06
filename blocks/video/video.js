@@ -192,7 +192,9 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
     } else if (isScene7) {
       embedEl = getDivElement(link, replacePlaceholder, false);
     }
-
+    block.replaceChildren(embedEl);
+    block.dataset.embedIsLoaded = true;
+    
 
     if(isScene7 && viewerType ){
       var s7smartcropvideoviewer = new s7viewers.SmartCropVideoViewer({
@@ -219,8 +221,6 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
       s7videoviewer.init(); 
     }
 
-    block.replaceChildren(embedEl);
-    block.dataset.embedIsLoaded = true;
-    
+  
 
   };
