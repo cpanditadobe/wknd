@@ -221,5 +221,6 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
 
     block.replaceChildren(embedEl);
     block.dataset.embedIsLoaded = true;
+    
 
   };
