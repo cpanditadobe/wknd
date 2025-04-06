@@ -185,7 +185,10 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
     } else if (isScene7) {
       embedEl = getDivElement(link, replacePlaceholder, autoplay);
     }
+    block.replaceChildren(embedEl);
 
+
+    block.dataset.embedIsLoaded = true;
     if(isScene7){
 
       /*var s7videoviewer = new s7viewers.VideoViewer({
@@ -213,9 +216,6 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
 
     }
 
-    block.replaceChildren(embedEl);
 
-
-    block.dataset.embedIsLoaded = true;
 
   };
