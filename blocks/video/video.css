@@ -76,10 +76,10 @@
 
 #s7video_div.s7videoviewer{
     width:100%; 
-    height:auto;
+    height: 800px;;
  }
 
  #s7smartcropvideo_div.s7smartcropvideoviewer{
   width:100%; 
-  height:auto;
+  height:1200px;
 }
