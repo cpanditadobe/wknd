@@ -143,15 +143,15 @@ function embedYoutube(url, replacePlaceholder, autoplay) {
         });
         block.append(wrapper);
       } else {
-        block.classList.add('lazy-loading');
-        const observer = new IntersectionObserver((entries) => {
-          if (entries.some((e) => e.isIntersecting)) {
-            observer.disconnect();
+        //block.classList.add('lazy-loading');
+        //const observer = new IntersectionObserver((entries) => {
+          //if (entries.some((e) => e.isIntersecting)) {
+            //observer.disconnect();
             loadVideoEmbed(block, link, false, block.classList.contains('autoplay'));
-            block.classList.remove('lazy-loading');
-          }
-        });
-        observer.observe(block);
+            //block.classList.remove('lazy-loading');
+          //}
+        //});
+        //observer.observe(block);
       }
     }
 
